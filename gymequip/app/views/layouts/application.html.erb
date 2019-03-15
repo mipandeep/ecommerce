@@ -24,8 +24,8 @@
     <h3>Filter Products</h3>
     <%= form_tag(results_filter_index_path, method: "get") do %>
     <%= label_tag(:query, "Filter:") %>
-    <%= collection_select(:query_deal,:deal_id,Deal.all.order(:name),:id,:name)%>
-    <%= submit_tag("Filter") %>
+    <%= collection_select(:query_status,:product_status_id,ProductStatus.all.order(:name),:id,:name)%>
+    <%= submit_tag("Filter Products") %>
     <% end %>
     <%= yield %>
   </body>

@@ -1,2 +1,9 @@
-<h1>Filter#results</h1>
-<p>Find me in app/views/filter/results.html.erb</p>
+<h1><%=@name%> Products</h1>
+
+<% @products.each do |p| %>
+
+<%= link_to p.name, p %><br>
+<%= p.price %><br>
+<%= p.category.name%><br>
+<br>
+<% end%>

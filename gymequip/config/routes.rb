@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  resources :filter , only:[:index] do
+    collection do
+      get 'results'
+    end
+  end
 
   root to: 'product#index'
   get '/:permalink' , to: 'pages#permalink' , as: 'permalink'
