@@ -1,5 +1,13 @@
 <h1>Products</h1>
 
+<h3>Categories<h3>
+<% category = Category.all %>
+<% category.each do |c| %>
+
+<% end %>
+
+
+
 <% @products.each do |p| %>
 
 <%= link_to p.name, p %><br>

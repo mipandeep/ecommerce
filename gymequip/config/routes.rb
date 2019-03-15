@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'categories/show'
   get 'pages/show'
   get 'product/index'
   get 'product/show'
