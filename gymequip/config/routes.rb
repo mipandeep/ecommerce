@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/permalink'
+  get 'pages/show'
   get 'product/index'
   get 'product/show'
   resources :product ,only:[:index,:show]
