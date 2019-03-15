@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'filter/index'
+  get 'filter/results'
   get 'categories/show'
   get 'pages/show'
   get 'product/index'

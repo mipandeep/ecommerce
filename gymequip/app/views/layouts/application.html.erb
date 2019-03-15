@@ -12,9 +12,21 @@
   <body>
     <% pages = Page.all%>
     <% pages.each do |p| %>
-      <%= link_to "#{p.title}", permalink_path(:permalink => p.permalink) %>
+      <%= link_to "#{p.title}", permalink_path(:permalink => p.permalink) %><br>
     <%end %>
-
+    <br>
+    <h3>Categories</h3>
+      <% category = Category.all %>
+      <% category.each do |c| %>
+      <%= link_to "#{c.name}", categories_show_path(:id => c.id) %><br>
+      <% end %>
+    <br>
+    <h3>Filter Products</h3>
+    <%= form_tag(results_filter_index_path, method: "get") do %>
+    <%= label_tag(:query, "Filter:") %>
+    <%= collection_select(:query_deal,:deal_id,Deal.all.order(:name),:id,:name)%>
+    <%= submit_tag("Filter") %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
